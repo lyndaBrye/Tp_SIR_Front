@@ -5,6 +5,5 @@ import {ArtisteListComponent} from './components/artiste-list/artiste-list.compo
 export const routes: Routes = [
   { path: '', component: UserListComponent },
   { path: 'users', component: UserListComponent },
-
   { path: 'artistes', component: ArtisteListComponent },
 ];
