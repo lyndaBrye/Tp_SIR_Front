@@ -1,13 +1,1 @@
-<div class="app-container">
-  <h1>{{ title }}</h1>
-  <p>Bienvenue sur la page principale de l'application</p>
-
-  <!-- Bouton pour naviguer vers la liste des utilisateurs -->
-  <button (click)="navigateToUsers()">Voir la liste des utilisateurs</button>
-
-  <!-- Bouton pour naviguer vers la liste des artistes -->
-  <button (click)="navigateToArtistes()">Voir la liste des artistes</button>
-
-  <!-- Route Outlet pour rendre le contenu dynamique en fonction de la navigation -->
-  <router-outlet></router-outlet>
-</div>
+<router-outlet></router-outlet> <!-- Composant de routage -->

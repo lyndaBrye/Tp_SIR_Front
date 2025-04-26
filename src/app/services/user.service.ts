@@ -1,9 +1,13 @@
+// @ts-ignore
 import {Injectable} from '@angular/core';
+// @ts-ignore
 import {Observable} from 'rxjs';
+// @ts-ignore
 import {HttpClient} from '@angular/common/http';
 import {UserModel} from '../models/user.model';
 
 
+// @ts-ignore
 @Injectable({
   providedIn: 'root'
 })

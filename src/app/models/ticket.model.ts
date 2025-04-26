@@ -1,5 +1,7 @@
 import {UserModel} from './user.model';
 
-export class TicketModel {
-
+export interface TicketModel {
+  id?: number;
+  concertId: number;
+  userId?: number;
 }

@@ -1,0 +1,11 @@
+<p>ticket-list works!</p>
+<h2>🎟️ Liste des tickets</h2>
+<ul *ngIf="tickets.length > 0; else noData">
+  <li *ngFor="let ticket of tickets">
+    Ticket #{{ ticket.id }} – Concert ID: {{ ticket.concertId }} – User ID: {{ ticket.userId || 'N/A' }}
+  </li>
+</ul>
+
+<ng-template #noData>
+  <p>🕵️ Aucun ticket trouvé.</p>
+</ng-template>

@@ -1,0 +1,14 @@
+<p>concert-list works!</p>
+<div class="concert-list">
+  <h2>Liste des concerts</h2>
+  <ul *ngIf="concerts.length > 0; else noConcerts">
+    <li *ngFor="let concert of concerts">
+      <strong>{{ concert.artiste?.nom }}</strong> - {{ concert.date | date: 'short' }} à {{ concert.lieu }}
+      ({{ concert.capacity }} places - {{ concert.prix }}€)
+    </li>
+  </ul>
+
+  <ng-template #noConcerts>
+    <p>Aucun concert disponible.</p>
+  </ng-template>
+</div>
