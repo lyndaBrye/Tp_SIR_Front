@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 // @ts-ignore
 import {HttpClient} from '@angular/common/http';
 import {UserModel} from '../models/user.model';
+import {TicketModel} from '../models/ticket.model';
 
 
 // @ts-ignore
@@ -34,5 +35,11 @@ export class UserService {
 
   deleteUser(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}${id}`);
+  }
+
+  buyTicket(userId: number, concertId: number, quantity: number): Observable<TicketModel[]> {
+    return this.http.post<TicketModel[]>(`${this.apiUrl}${userId}/tickets/${concertId}?quantity=${quantity}`, {});
+
+
   }
 }

@@ -10,7 +10,6 @@ export interface UserModel {
   email: string;
   tel: string;
   password: string;
-  age: number;
   sexe: Sexe;
-  //tickets?: TicketModel[]; // Optionnel si tu veux charger les tickets plus tard
+  tickets?: TicketModel[];
 }

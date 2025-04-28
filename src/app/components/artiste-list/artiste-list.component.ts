@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ArtisteService } from '../../services/artiste.service';
 import { ArtisteModel } from '../../models/artiste.model';
 import {CommonModule} from '@angular/common';
+import {HeaderComponent} from '../header/header.component';
+import {FooterComponent} from '../footer/footer.component';
 
 @Component({
   selector: 'app-artiste-list',
   standalone: true, // Spécifie que ce composant est standalone
-  imports: [CommonModule],
+  imports: [CommonModule, HeaderComponent, FooterComponent],
   templateUrl: './artiste-list.component.html',
   styleUrls: ['./artiste-list.component.css']
 })

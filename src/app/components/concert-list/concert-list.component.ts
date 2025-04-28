@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ConcertService } from '../../services/concert.service';
 import { ConcertModel } from '../../models/concert.model';
 import {CommonModule} from '@angular/common';
+import {HeaderComponent} from "../header/header.component";
+import {FooterComponent} from '../footer/footer.component';
 
 @Component({
   selector: 'app-concert-list',
   standalone: true, // Spécifie que ce composant est standalone
-  imports: [CommonModule],
+  imports: [CommonModule, HeaderComponent, FooterComponent],
 
   templateUrl: './concert-list.component.html',
   styleUrls: ['./concert-list.component.css']

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {ArtisteListComponent} from './components/artiste-list/artiste-list.component';
-import {RouterOutlet} from '@angular/router';
+import {RouterLink, RouterModule, RouterOutlet} from '@angular/router';
+import {HomeComponent} from './components/home/home.component';
 
 @Component({
   selector: 'app-root',

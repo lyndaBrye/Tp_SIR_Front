@@ -1,0 +1,59 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConcertPass - Connexion/Inscription</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<!-- Auth Container -->
+<main class="min-h-screen flex items-center justify-center p-4">
+    <div class="auth-container rounded-2xl p-8 w-full max-w-2xl text-white">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold mb-2">Bienvenue sur ConcertPass</h1>
+            <p class="opacity-90">Accédez à votre compte ou créez-en un nouveau</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex mb-8 bg-white bg-opacity-10 rounded-full p-1">
+            <button id="login-tab" class="tab-button active flex-1 py-2 px-4 rounded-full font-medium">
+                Connexion
+            </button>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-form" class="auth-card bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8">
+            <form (ngSubmit)="login()">
+                <div class="mb-6">
+                    <label for="login-email" class="block mb-2 font-medium">Email</label>
+                    <div class="relative">
+                        <i class="fas fa-envelope absolute left-3 top-3 text-purple-200"></i>
+                        <input type="email" id="login-email" [(ngModel)]="email" name="email" class="input-field w-full pl-10 pr-4 py-3 bg-white bg-opacity-20 rounded-lg border border-white border-opacity-20 focus:outline-none focus:border-purple-300 placeholder-purple-200" placeholder="votre@email.com" required>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label for="login-password" class="block mb-2 font-medium">Mot de passe</label>
+                    <div class="relative">
+                        <i class="fas fa-lock absolute left-3 top-3 text-purple-200"></i>
+                        <input type="password" id="login-password" [(ngModel)]="password" name="password" class="input-field w-full pl-10 pr-4 py-3 bg-white bg-opacity-20 rounded-lg border border-white border-opacity-20 focus:outline-none focus:border-purple-300 placeholder-purple-200" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label for="login-type" class="block mb-2 font-medium">Type d'utilisateur</label>
+                    <select id="login-type" [(ngModel)]="type" name="type" class="input-field w-full pl-4 pr-4 py-3 bg-white bg-opacity-20 rounded-lg border border-white border-opacity-20 focus:outline-none focus:border-purple-300 text-purple-200" required>
+                        <option value="user">Utilisateur</option>
+                        <option value="organisateur">Organisateur</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="w-full bg-white text-purple-600 py-3 px-4 rounded-lg font-bold hover:bg-opacity-90 transition mb-4">
+                    Se connecter
+                </button>
+            </form>
+        </div>
+
+
+    </div>
+</main>

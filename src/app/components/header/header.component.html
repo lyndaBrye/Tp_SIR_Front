@@ -1,0 +1,47 @@
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConcertPass - Votre billetterie de concerts en ligne</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans">
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="flex items-center">
+      <i class="fas fa-music text-purple-600 text-2xl mr-2"></i>
+      <span class="text-xl font-bold text-purple-600">ConcertPass</span>
+    </div>
+
+    <nav class="hidden md:flex space-x-8">
+      <a routerLink="/home"  class="text-purple-600 font-medium">Accueil</a>
+      <a routerLink="/concerts"  class="text-gray-600 hover:text-purple-600">Concerts</a>
+      <a routerLink="/artistes" class="text-gray-600 hover:text-purple-600">Artistes</a>
+    </nav>
+
+    <div class="hidden md:flex items-center space-x-4">
+  <button *ngIf="loginService.isLoggedIn" (click)="loginService.logout()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md">
+        Déconnexion
+    </button>
+      <button class="px-4 py-2 text-gray-600 hover:text-purple-600 relative">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="absolute -top-1 -right-1 bg-purple-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+      </button>
+      <button *ngIf="isOrganisateur()" (click)="openModal()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md">
+        Organisateur
+      </button>
+    </div>
+
+    <app-dashboard-organisateur
+      [isVisible]="isVisible"
+      (close)="closeModal()">
+    </app-dashboard-organisateur>
+
+    <button id="mobile-menu-button" class="md:hidden text-gray-600">
+      <i class="fas fa-bars text-2xl"></i>
+    </button>
+  </div>
+
+
+</header>
