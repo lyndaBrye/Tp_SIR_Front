@@ -4,7 +4,8 @@ import {TicketModel} from './ticket.model';
 
 export class ConcertModel {
   id?: number;
-  date?: string; // Utilise string pour les dates JSON (format ISO 8601)
+  //date au format YYYY-MM-DD'T'HH:mm:ss
+  date?: string;
   lieu?: string;
   capacity?: number;
   prix?: number;

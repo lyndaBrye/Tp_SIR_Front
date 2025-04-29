@@ -30,7 +30,6 @@
       <div *ngFor="let concert of concerts" class="ticket-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="relative">
           <img [src]="concert.imageUrl" class="w-full h-full object-cover rounded-full" alt="Concert Image">
-
         </div>
         <div class="p-4">
           <h3 class="text-xl font-bold text-gray-800">{{ concert.artiste?.nom }}</h3>
