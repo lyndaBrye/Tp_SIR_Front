@@ -1,1 +1,27 @@
-<p>user works!</p>
+<div class="max-w-md mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg border border-gray-300">
+  <a routerLink="/home"  class="text-purple-600 font-medium">Accueil</a>
+
+  <h2 class="text-2xl font-bold text-purple-700 mb-6 text-center">👤 Profil Utilisateur</h2>
+  <div *ngIf="user">
+    <div class="mb-4">
+      <p class="text-sm font-semibold text-gray-500">Nom :</p>
+      <p class="text-lg">{{ user.nom }}</p>
+      <p class="text-sm font-semibold text-gray-500">Prénom :</p>
+      <p class="text-lg">{{ user.prenom }}</p>
+      <p class="text-sm font-semibold text-gray-500">Genre :</p>
+      <p class="text-lg">{{ user.sexe }}</p>
+      <p class="text-sm font-semibold text-gray-500">Telephone :</p>
+      <p class="text-lg">{{ user.tel }}</p>
+
+      <p class="text-sm font-semibold text-gray-500">Email :</p>
+      <p class="text-lg">{{ user.email }}</p>
+    </div>
+
+
+
+  </div>
+
+  <div *ngIf="!user" class="text-center text-gray-500">
+    <p>Utilisateur non connecté</p>
+  </div>
+</div>

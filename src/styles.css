@@ -66,3 +66,78 @@
 .input-field:focus {
   box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
 }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f3f4f6;
+}
+
+.ticket {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.ticket:hover {
+  transform: rotateY(10deg) rotateX(5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.perforation {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #f3f4f6;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.perforation-left {
+  left: -7px;
+}
+
+.perforation-right {
+  right: -7px;
+}
+
+.shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.artist-name {
+  font-family: 'Playfair Display', serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.barcode {
+  letter-spacing: 5px;
+  transform: rotate(90deg);
+  transform-origin: left top;
+  position: absolute;
+  right: -20px;
+  top: 50%;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: ripple 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}

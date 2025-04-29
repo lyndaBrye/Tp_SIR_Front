@@ -9,10 +9,12 @@ import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import {HeroComponent} from '../hero/hero.component';
 import {TicketModalComponent} from '../ticket-modal/ticket-modal.component';
+import {ConcertListComponent} from '../concert-list/concert-list.component';
+import {ArtisteListComponent} from '../artiste-list/artiste-list.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeaderComponent, FooterComponent, HeroComponent, TicketModalComponent],
+  imports: [CommonModule, RouterModule, HeaderComponent, FooterComponent, HeroComponent, ConcertListComponent, ArtisteListComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   encapsulation: ViewEncapsulation.None

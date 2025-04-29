@@ -4,11 +4,13 @@ import { ArtisteModel } from '../../models/artiste.model';
 import {CommonModule} from '@angular/common';
 import {HeaderComponent} from '../header/header.component';
 import {FooterComponent} from '../footer/footer.component';
+import {ConcertListComponent} from "../concert-list/concert-list.component";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-artiste-list',
-  standalone: true, // Spécifie que ce composant est standalone
-  imports: [CommonModule, HeaderComponent, FooterComponent],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './artiste-list.component.html',
   styleUrls: ['./artiste-list.component.css']
 })

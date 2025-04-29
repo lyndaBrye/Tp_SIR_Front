@@ -99,4 +99,26 @@ export class DashboardOrganisateurComponent {
       alert('Please fill in all required fields.');
     }
   }
+
+  deleteConcert(concert: ConcertModel) {
+    this.concertService.deleteConcert(concert.id!).subscribe({
+      next: () => {
+        this.concerts = this.concerts.filter(c => c.id !== concert.id);
+      },
+      error: (err) => {
+        console.error('Error deleting concert:', err);
+      }
+    });
+  }
+
+  updateConcert(concert: ConcertModel) {
+    this.concertService.updateConcert(concert.id!, concert).subscribe({
+      next: () => {
+        this.loadConcerts();
+      },
+      error: (err) => {
+        console.error('Error updating concert:', err);
+      }
+    });
+  }
 }

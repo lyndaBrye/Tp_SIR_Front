@@ -20,7 +20,7 @@ export class AuthGuardService implements CanActivate {
     state: RouterStateSnapshot
   ): MaybeAsync<GuardResult> {
     //const userType = sessionStorage.getItem('userType');
-    if (this.loginService.isLoggedIn()) {  // Tu dois avoir une fonction isLoggedIn dans ton UserService
+    if (this.loginService.isLoggedIn()) {
       return true;
     } else {
       this.router.navigate(['/']);
