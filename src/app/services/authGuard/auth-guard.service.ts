@@ -7,7 +7,7 @@ import {
   Router,
   RouterStateSnapshot
 } from '@angular/router';
-import {LoginService} from './login.service';
+import {LoginService} from '../login/login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,6 @@ export class AuthGuardService implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): MaybeAsync<GuardResult> {
-    //const userType = sessionStorage.getItem('userType');
     if (this.loginService.isLoggedIn()) {
       return true;
     } else {

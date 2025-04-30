@@ -1,6 +1,6 @@
 import {DashboardOrganisateurComponent} from '../dashboard-organisateur/dashboard-organisateur.component';
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import { LoginService } from '../../services/login.service'; // Ajuste le chemin
+import { LoginService } from '../../services/login/login.service'; // Ajuste le chemin
 import { RouterModule } from '@angular/router';
 import { NgIf } from '@angular/common';
 

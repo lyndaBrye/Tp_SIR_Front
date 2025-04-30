@@ -1,5 +1,5 @@
 import {TicketModel} from '../../models/ticket.model';
-import {TicketService} from '../../services/ticket.service';
+import {TicketService} from '../../services/ticket/ticket.service';
 import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 @Component({

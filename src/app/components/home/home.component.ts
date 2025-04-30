@@ -1,8 +1,8 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ConcertService } from '../../services/concert.service';
-import { ArtisteService } from '../../services/artiste.service';
+import { ConcertService } from '../../services/concert/concert.service';
+import { ArtisteService } from '../../services/artiste/artiste.service';
 import { ConcertModel } from '../../models/concert.model';
 import { ArtisteModel } from '../../models/artiste.model';
 import { HeaderComponent } from '../header/header.component';
@@ -24,8 +24,7 @@ export class HomeComponent implements OnInit {
   concerts: ConcertModel[] = [];
   artistes: ArtisteModel[] = [];
   isModalVisible: boolean = false;
-  selectedConcert: any = null;
-  availableSeats: string[] = [];   constructor(
+constructor(
     private concertService: ConcertService,
     private artisteService: ArtisteService
   ) {}
@@ -37,7 +36,7 @@ export class HomeComponent implements OnInit {
 
   loadConcerts(): void {
     this.concertService.getAllConcerts().subscribe(data => {
-      this.concerts = data.slice(0, 4); // Prendre seulement 4 concerts
+      this.concerts = data
     });
   }
 
@@ -46,33 +45,14 @@ export class HomeComponent implements OnInit {
       this.artistes = data.slice(0, 4); // Prendre seulement 4 artistes
     });
   }
+  currentFilters: any = {};
 
-
-
-  openModal(concert: ConcertModel) {
-    console.log('Concert sélectionné:', concert);
-    this.selectedConcert = concert;
- //   this.availableSeats = this.generateAvailableSeats(); // Tu peux améliorer selon ton besoin
-    this.isModalVisible = true;
+  onFiltersChanged(filters: any): void {
+    this.currentFilters = filters;
   }
 
-  closeModal() {
-    this.isModalVisible = false;
-  }
 
-  handleReservation(event: any) {
-    /*if (this.selectedConcert) {
-      this.ticketService.buyTicket(this.selectedConcert.id, event.seat).subscribe(
-        (response) => {
-          console.log('Réservation réussie', response);
-          this.isModalVisible = false;
-        },
-        (error) => {
-          console.error('Erreur lors de la réservation', error);
-        }
-      );
-    }*/
-  }
+
 
 
 

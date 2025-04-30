@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
-import { ConcertService } from '../../services/concert.service';
-import { UserService } from '../../services/user.service';
+import { ConcertService } from '../../services/concert/concert.service';
+import { UserService } from '../../services/user/user.service';
 import { TicketModel } from '../../models/ticket.model';
 @Component({
   selector: 'app-ticket-modal',

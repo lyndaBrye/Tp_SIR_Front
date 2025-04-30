@@ -1,14 +1,7 @@
 <app-header></app-header>
-<app-hero></app-hero>
-<!-- Popular Artists -->
-
+<app-hero (filtersChanged)="onFiltersChanged($event)"></app-hero>
+<app-concert-list [filters]="currentFilters"></app-concert-list>
 <app-artiste-list></app-artiste-list>
-
-
-<app-concert-list>
-
-</app-concert-list>
-
 
 
 <app-footer></app-footer>

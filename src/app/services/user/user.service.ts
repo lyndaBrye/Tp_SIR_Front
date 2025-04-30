@@ -4,8 +4,8 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 // @ts-ignore
 import {HttpClient} from '@angular/common/http';
-import {UserModel} from '../models/user.model';
-import {TicketModel} from '../models/ticket.model';
+import {UserModel} from '../../models/user.model';
+import {TicketModel} from '../../models/ticket.model';
 
 
 // @ts-ignore

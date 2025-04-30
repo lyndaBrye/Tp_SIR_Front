@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ArtisteService } from '../../services/artiste.service';
+import { ArtisteService } from '../../services/artiste/artiste.service';
 import { ArtisteModel } from '../../models/artiste.model';
 import {CommonModule} from '@angular/common';
-import {HeaderComponent} from '../header/header.component';
-import {FooterComponent} from '../footer/footer.component';
-import {ConcertListComponent} from "../concert-list/concert-list.component";
-import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-artiste-list',

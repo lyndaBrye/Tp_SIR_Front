@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ConcertService } from '../../services/concert.service';
+import { ConcertService } from '../../services/concert/concert.service';
 import { ConcertModel } from '../../models/concert.model';
-import { ArtisteService } from '../../services/artiste.service';
+import { ArtisteService } from '../../services/artiste/artiste.service';
 import {ArtisteModel} from '../../models/artiste.model';
 
 @Component({

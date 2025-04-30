@@ -4,25 +4,32 @@
       <h1 class="text-4xl md:text-5xl font-bold mb-6">Réservez vos places de concert en quelques clics</h1>
       <p class="text-xl mb-8">Découvrez les meilleurs artistes et groupes en tournée près de chez vous</p>
 
+      <!-- Barre de recherche -->
       <div class="bg-white rounded-lg shadow-lg p-4">
         <div class="flex flex-col md:flex-row gap-2">
           <div class="flex-1 relative">
             <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-            <input type="text" [(ngModel)]="searchArtist" placeholder="Artiste, groupe ou événement" class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-800">
+            <input type="text" [(ngModel)]="searchArtist" placeholder="Artiste, groupe ou événement"
+                   class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-800">
           </div>
           <div class="flex-1 relative">
             <i class="fas fa-map-marker-alt absolute left-3 top-3 text-gray-400"></i>
-            <input type="text" [(ngModel)]="searchLocation" placeholder="Lieu ou ville" class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-800">
+            <input type="text" [(ngModel)]="searchLocation" placeholder="Lieu ou ville"
+                   class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-800">
           </div>
           <div class="flex-1 relative">
             <i class="fas fa-calendar absolute left-3 top-3 text-gray-400"></i>
-            <input type="date" [(ngModel)]="searchDate" class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-800">
+            <input type="datetime-local" [(ngModel)]="searchDate"
+                   class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-800">
           </div>
-          <button (click)="filterConcerts()" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-md transition">
+          <button (click)="emitFilters()"
+                  class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-md transition">
             Rechercher
           </button>
         </div>
       </div>
     </div>
+
+
   </div>
 </section>

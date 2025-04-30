@@ -1,29 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { ConcertService } from '../../services/concert.service';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import { ConcertService } from '../../services/concert/concert.service';
 import { ConcertModel } from '../../models/concert.model';
 import {CommonModule} from '@angular/common';
-import {HeaderComponent} from "../header/header.component";
-import {FooterComponent} from '../footer/footer.component';
-import {RouterLink} from "@angular/router";
 import {TicketModalComponent} from '../ticket-modal/ticket-modal.component';
 import {ArtisteModel} from '../../models/artiste.model';
-import {ArtisteService} from '../../services/artiste.service';
+import {ArtisteService} from '../../services/artiste/artiste.service';
+import {data} from 'autoprefixer';
 
 @Component({
   selector: 'app-concert-list',
-  standalone: true, // Spécifie que ce composant est standalone
+  standalone: true,
   imports: [CommonModule, TicketModalComponent],
 
   templateUrl: './concert-list.component.html',
   styleUrls: ['./concert-list.component.css']
 })
-export class ConcertListComponent implements OnInit {
-
+export class ConcertListComponent implements OnChanges {
+  @Input() filters: any;
   concerts: ConcertModel[] = [];
   artistes: ArtisteModel[] = [];
   isModalVisible: boolean = false;
   selectedConcert: any = null;
-  availableSeats: string[] = [];   constructor(
+  constructor(
     private concertService: ConcertService,
     private artisteService: ArtisteService
   ) {}
@@ -31,17 +29,21 @@ export class ConcertListComponent implements OnInit {
   ngOnInit(): void {
     this.loadConcerts();
     this.loadArtistes();
+
   }
 
   loadConcerts(): void {
     this.concertService.getAllConcerts().subscribe(data => {
-      this.concerts = data; // Prendre seulement 4 concerts
+      this.concerts = data;
+      this.filteredConcerts = data;
+
     });
   }
 
   loadArtistes(): void {
     this.artisteService.getAllArtistes().subscribe(data => {
-      this.artistes = data; // Prendre seulement 4 artistes
+      this.artistes = data;
+
     });
   }
 
@@ -50,7 +52,6 @@ export class ConcertListComponent implements OnInit {
   openModal(concert: ConcertModel) {
     console.log('Concert sélectionné:', concert);
     this.selectedConcert = concert;
-    //   this.availableSeats = this.generateAvailableSeats(); // Tu peux améliorer selon ton besoin
     this.isModalVisible = true;
   }
 
@@ -58,19 +59,21 @@ export class ConcertListComponent implements OnInit {
     this.isModalVisible = false;
   }
 
-  handleReservation(event: any) {
-    /*if (this.selectedConcert) {
-      this.ticketService.buyTicket(this.selectedConcert.id, event.seat).subscribe(
-        (response) => {
-          console.log('Réservation réussie', response);
-          this.isModalVisible = false;
-        },
-        (error) => {
-          console.error('Erreur lors de la réservation', error);
-        }
-      );
-    }*/
+  filteredConcerts: ConcertModel[] = [];
+
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.filters && this.filters) {
+      this.applyFilters();
+    }
   }
 
-
+  applyFilters(): void {
+    this.filteredConcerts = this.concerts.filter(concert => {
+      const matchesArtist = concert.artiste?.nom.toLowerCase().includes(this.filters.artist?.toLowerCase() || '');
+      const matchesLocation = concert.lieu?.toLowerCase().includes(this.filters.location?.toLowerCase() || '');
+      const matchesDate = this.filters.date ? concert.date?.startsWith(this.filters.date) : true;
+      return matchesArtist && matchesLocation && matchesDate;
+    });
+  }
 }
