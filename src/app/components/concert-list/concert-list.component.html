@@ -16,7 +16,7 @@
               <span class="text-gray-600 font-semibold">Concert</span>
             </div>
             <h3 class="text-xl font-bold text-gray-800 mb-2">{{ concert.libelle }}</h3>
-
+            <img [src]="concert.imageUrl" alt="Concert Image" class="w-full h-48 object-cover mb-4 rounded-lg">
             <p class="text-gray-600 mb-2"><i class="fas fa-user mr-2 text-purple-600"></i>{{ concert.artiste?.nom }} {{ concert.artiste?.prenom }}</p>
             <p class="text-gray-600 mb-2"><i class="fas fa-users mr-2 text-purple-600"></i>Capacité : {{ concert.capacity }}</p>
             <p class="text-gray-600 mb-2"><i class="fas fa-calendar-alt mr-2 text-purple-600"></i>{{ concert.date | date: 'short' }}</p>
