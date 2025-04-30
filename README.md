@@ -1,59 +1,36 @@
-# MonProjetAngular
+# Application de Réservation de Billets de Concert
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+Ce projet est une application web permettant de gérer et de réserver des billets pour des concerts. Les utilisateurs peuvent consulter les concerts à venir, réserver des billets et générer des billets au format PDF après l'achat.
 
-## Development server
+## Fonctionnalités
 
-To start a local development server, run:
+- **Gestion des utilisateurs** : Affichage de la liste des utilisateurs avec leurs informations.
+- **Liste des concerts** : Affichage des concerts à venir avec des détails tels que l'artiste, la date, le lieu et le prix.
+- **Réservation de billets** : Réserver des billets pour un concert sélectionné.
+- **Génération de billets PDF** : Génération et téléchargement d'un billet PDF après une réservation réussie.
+- **Design responsive** : Optimisé pour les appareils de bureau et mobiles.
 
-```bash
-ng serve
-```
+## Technologies utilisées
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Frontend** : Angular
+- **Langages** : TypeScript, HTML, CSS
+- **Bibliothèques** :
+  - `jsPDF` pour la génération de PDF
+  - `html2canvas` pour le rendu HTML en canvas
+- **Style** : Tailwind CSS
+- **Gestionnaire de paquets** : npm
 
-## Code scaffolding
+## Structure du projet
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- `src/app/components/` : Contient les composants Angular de l'application.
+  - `user-list/` : Affiche la liste des utilisateurs (`user-list.component.html`).
+  - `concert-list/` : Affiche la liste des concerts (`concert-list.component.html`).
+  - `ticket-modal/` : Gère la réservation de billets et la génération de PDF (`ticket-modal.component.html` et `ticket-modal.component.ts`).
+- `src/app/services/` : Contient les services pour la gestion des utilisateurs et des concerts.
+- `src/app/models/` : Contient les modèles de données pour l'application.
 
-```bash
-ng generate component component-name
-```
+## Installation
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Clonez le dépôt :
+   ```bash
+   git clone https://github.com/lyndaBrye/Tp_SIR_Front
