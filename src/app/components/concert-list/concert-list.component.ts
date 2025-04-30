@@ -63,7 +63,7 @@ export class ConcertListComponent implements OnChanges {
 
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.filters && this.filters) {
+    if (changes['filters'] && this.filters) {
       this.applyFilters();
     }
   }
