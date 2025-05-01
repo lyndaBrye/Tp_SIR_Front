@@ -29,8 +29,42 @@ Ce projet est une application web permettant de gérer et de réserver des bille
 - `src/app/services/` : Contient les services pour la gestion des utilisateurs et des concerts.
 - `src/app/models/` : Contient les modèles de données pour l'application.
 
-## Installation
 
-1. Clonez le dépôt :
-   ```bash
-   git clone https://github.com/lyndaBrye/Tp_SIR_Front
+## Lancement de l'application Frontend
+
+Pour démarrer l'application en local :
+
+```bash
+npm install
+ng serve
+```
+
+L'application sera accessible à l’adresse : [http://localhost:4200](http://localhost:4200)
+
+---
+
+## 🔐 Authentification et Rôles Utilisateurs
+
+Dans cette application, nous considérons que les utilisateurs sont **déjà inscrits sur la plateforme**. Lors de la connexion, chaque utilisateur doit renseigner :
+
+- son **identifiant (e-mail)**,
+- son **mot de passe**,
+- et **sélectionner son type de profil** : `Organisateur` ou `Utilisateur`.
+
+Une fois connecté, l’utilisateur est redirigé vers un tableau de bord personnalisé en fonction de son rôle :
+
+### 👤 Utilisateur
+Un utilisateur peut :
+- consulter la **liste des concerts disponibles**,
+- **réserver un billet** pour un concert sélectionné,
+- **télécharger un billet** au format PDF après réservation.
+
+### 🎤 Organisateur
+Un organisateur possède des fonctionnalités supplémentaires :
+- accéder à un espace personnel pour **créer un nouveau concert**,
+- **gérer les concerts** qu’il a organisés (modification, suppression, consultation),
+- et également **réserver ses propres billets**, tout comme un utilisateur classique.
+
+Cette séparation claire des rôles permet d’offrir une expérience personnalisée et intuitive à chaque type d’utilisateur.
+
+
